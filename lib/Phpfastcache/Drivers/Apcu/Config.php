@@ -20,4 +20,26 @@ use Phpfastcache\Config\ConfigurationOption;
 
 class Config extends ConfigurationOption
 {
+    /**
+     * @var string
+     */
+    protected $optPrefix = '';
+
+    /**
+     * @return string
+     */
+    public function getOptPrefix(): string
+    {
+        return $this->optPrefix;
+    }
+
+    /**
+     * @param string $optPrefix
+     * @return Config
+     */
+    public function setOptPrefix(string $optPrefix): Config
+    {
+        $this->optPrefix = trim($optPrefix);
+        return $this;
+    }
 }
